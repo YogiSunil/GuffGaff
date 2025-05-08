@@ -79,11 +79,6 @@ GuffGaff is designed with flexibility in mind. Here are features that can be add
 
 ---
 
-## 📄 License
-
-Open-source under the [MIT License](LICENSE). Contributions welcome!
-
----
 
 ## 🙌 Made With
 
@@ -110,7 +105,7 @@ Make sure you have the following installed:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/GuffGaff.git
+git clone https://github.com/YogiSunil/GuffGaff.git
 cd GuffGaff
 ```
 

@@ -1,9 +1,8 @@
-from app.extensions import app, db
-from app.main.routes import main
-from app.auth.routes import auth
+from app import create_app
+from app.extensions import db
+from flask.cli import with_appcontext
 
-app.register_blueprint(main)
-app.register_blueprint(auth)
+app = create_app()
 
 with app.app_context():
     db.create_all()
