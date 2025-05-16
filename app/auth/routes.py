@@ -22,7 +22,7 @@ def signup():
         db.session.add(new_user)
         db.session.commit()
         login_user(new_user)
-        flash("Account created!")
+        flash("Account created successfully! Welcome to GuffGaff.", "success")
         return redirect(url_for("auth.profile"))
     return render_template("auth/signup.html", form=form)
 

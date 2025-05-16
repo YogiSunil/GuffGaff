@@ -5,7 +5,7 @@ main_bp = Blueprint("main", __name__)
 
 @main_bp.route("/")
 def welcome():
-    return render_template("home.html")  # make sure this file exists in templates/
+    return render_template("base.html")  # make sure this file exists in templates/
 
 @main_bp.route("/home")
 @login_required

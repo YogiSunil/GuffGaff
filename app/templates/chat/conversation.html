@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Conversation #{{ conversation.id }}</h2>
+<ul>
+  {% for msg in messages %}
+    <li><b>{{ msg.sender_id }}</b>: {{ msg.content }}</li>
+  {% endfor %}
+</ul>
+<form method="post">
+    <input type="text" name="content" placeholder="Type a message" required>
+    <button type="submit" class="btn btn-success">Send</button>
+</form>
+<a href="{{ url_for('chat.chat_home') }}">Back to Conversations</a>
+{% endblock %}
