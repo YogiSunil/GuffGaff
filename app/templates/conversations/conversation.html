@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Chat: {{ conversation.name }}</h2>
+<ul>
+  {% for msg in messages %}
+    <li><strong>User {{ msg.user_id }}:</strong> {{ msg.content }} <em>{{ msg.timestamp }}</em></li>
+  {% endfor %}
+</ul>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.content.label }} {{ form.content(size=40) }}
+    {{ form.submit() }}
+</form>
+
+<p><a href="{{ url_for('movies.suggest_movie', conv_id=conversation.id) }}">🎬 Suggest a Movie</a></p>
+{% endblock %}

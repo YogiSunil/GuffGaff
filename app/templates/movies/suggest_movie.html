@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Suggest a Movie</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.title.label }} {{ form.title(size=40) }}<br>
+    {{ form.description.label }} {{ form.description(rows=3, cols=40) }}<br>
+    {{ form.submit() }}
+</form>
+<a href="{{ url_for('chat.conversation', conv_id=conv_id) }}">⬅ Back to Chat</a>
+{% endblock %}

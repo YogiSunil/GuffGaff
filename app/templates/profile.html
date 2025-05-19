@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Profile</h2>
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<a href="{{ url_for('profile.edit_profile') }}">✏️ Edit Profile</a><br>
+<a href="{{ url_for('profile.change_password') }}">🔒 Change Password</a>
+{% endblock %}

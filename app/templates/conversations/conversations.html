@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Conversations</h2>
+<ul>
+  {% for convo in conversations %}
+    <li><a href="{{ url_for('chat.conversation', conv_id=convo.id) }}">{{ convo.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

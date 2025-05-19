@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Today's Random Challenges</h2>
+<ul id="challenge-list">
+    <li>Loading daily challenges...</li>
+</ul>
+<script>
+fetch('https://opentdb.com/api.php?amount=4&type=multiple')
+  .then(response => response.json())
+  .then(data => {
+    const list = document.getElementById('challenge-list');
+    list.innerHTML = '';
+    if (data.results && data.results.length > 0) {
+      data.results.slice(0, 4).forEach((item, idx) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>Challenge ${idx+1}:</strong> ${item.question}`;
+        list.appendChild(li);
+      });
+    } else {
+      list.innerHTML = '<li>No challenges found from API.</li>';
+    }
+  })
+  .catch(() => {
+    document.getElementById('challenge-list').innerHTML = '<li>Could not load challenges. Please check your internet connection or try again later.</li>';
+  });
+</script>
+{% endblock %}
