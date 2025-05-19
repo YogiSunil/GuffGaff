@@ -89,7 +89,7 @@ pip install -r requirements.txt
 ```
 
 ### Environment Setup
-Create a `.env` file in the root directory:
+Rename a `.env` file in the root directory:
 ```
 FLASK_APP=app
 FLASK_ENV=development
